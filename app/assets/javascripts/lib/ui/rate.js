@@ -2,7 +2,7 @@
  rate
 */
 (function(){
-    var Rate = LDR.Rate = Class.create().extend({
+    window.Rate = LDR.Rate = Class.create().extend({
         initialize: function(callback){
             Object.extend(this, Rate);
             this.click = callback;
