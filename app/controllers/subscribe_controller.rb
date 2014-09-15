@@ -11,17 +11,19 @@ class SubscribeController < ApplicationController
     feeds = []
     # params[:url] is http:/example.com because of squeeze("/")
     @url = url_from_path(:url)
-    FeedSearcher.search(@url).each do |feedlink|
-      if feed = Feed.find_by_feedlink(feedlink)
-        if sub = current_member.subscribed(feed)
-          feed[:subscribe_id] = sub.id
+    begin
+      timeout(10){
+        FeedSearcher.search(@url).each do |feedlink|
+          if feed = Feed.find_by_feedlink(feedlink)
+            feeds << feed
+            next
+          end
+          feed = Feed.initialize_from_uri(feedlink)
+          next unless feed
+          feeds << feed
         end
-        feeds << feed
-        next
-      end
-      feed = Feed.initialize_from_uri(feedlink)
-      next unless feed
-      feeds << feed
+      } 
+    rescue
     end
     if feeds.empty?
       flash[:notice] = "please check URL"

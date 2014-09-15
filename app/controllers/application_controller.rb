@@ -44,7 +44,10 @@ class ApplicationController < ActionController::Base
   def url_from_path(name)
     if (url = params[name]).present?
       if not (parsed_url = URI.parse(url)).is_a? URI::HTTP or parsed_url.host.nil?
-        url = nil
+        url = url.gsub(/http:\//, "http://").gsub(/https:\//, "https://")
+        if not (parsed_url = URI.parse(url)).is_a? URI::HTTP or parsed_url.host.nil?
+          url = nil
+        end
       end
     end
     unless url.present?

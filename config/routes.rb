@@ -58,8 +58,10 @@ Rails.application.routes.draw do
   get 'account/:action', to: 'account', as: 'account'
 
   match 'rpc/:action' => 'rpc', via: [:post, :get]
+  match 'oreoreapi/:action' => 'oreoreapi', via: [:post, :get]
 
   get 'utility/bookmarklet' => "utility/bookmarklet#index"
+
 
   match ':controller(/:action(/:id))(.:format)', via: [:post, :get]
 end

@@ -35,4 +35,8 @@ class Subscription < ActiveRecord::Base
   def update_subscribers_count
     self.feed.update_subscribers_count
   end
+
+  def unread_count
+    self.feed.items.stored_since(self.viewed_on).count
+  end
 end

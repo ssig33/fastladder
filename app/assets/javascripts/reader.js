@@ -1,4 +1,5 @@
 //= require application
+//= require jquery
 //= require_tree ./lib/models
 //= require lib/reader/event_hook
 //= require lib/reader/event_trigger
@@ -13,3 +14,4 @@
 //= require lib/reader/manage
 //= require lib/reader/widgets_en
 //= require lib/reader/addon
+//= require lib/reader/hatebu
