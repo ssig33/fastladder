@@ -7,20 +7,9 @@ require 'erb'
 require 'uri'
 require 'yaml'
 
-database_file = File.join(File.dirname(__FILE__), "config/database.yml")
-adapters = []
 
-if File.exist?(database_file)
-  database_config = YAML::load(ERB.new(IO.read(database_file)).result)
-  adapters += database_config.values.map {|conf| conf['adapter']}.compact.uniq
-end
 
-if database_url = ENV['DATABASE_URL']
-  adapters << URI.parse(database_url).scheme
-end
-
-gem 'pg'
-
+gem 'pg', '< 1.0'
 gem 'addressable', require: 'addressable/uri'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'feed_searcher', '>= 0.0.6'
