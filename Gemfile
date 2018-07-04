@@ -19,21 +19,7 @@ if database_url = ENV['DATABASE_URL']
   adapters << URI.parse(database_url).scheme
 end
 
-if adapters.any?
-  adapters.each do |adapter|
-    case adapter
-    when 'mysql2'     ; gem 'mysql2'
-    when 'mysql'      ; gem 'mysql'
-    when /postgres/   ; gem 'pg'
-    when /sqlite3/    ; gem 'sqlite3'
-    else
-      warn("Unknown database adapter `#{adapter}` found in config/database.yml, use Gemfile.local to load your own database gems")
-    end
-  end
-else
-  warn("No adapter found in config/database.yml or DATABASE_URL, please configure it first -- fallback to pg")
-  gem 'pg'
-end
+gem 'pg'
 
 gem 'addressable', require: 'addressable/uri'
 gem 'coffee-rails', '~> 4.1.0'
@@ -84,5 +70,4 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'unicorn'
-  gem 'pg'
 end
