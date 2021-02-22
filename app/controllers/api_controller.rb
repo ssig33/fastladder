@@ -102,7 +102,7 @@ class ApiController < ApplicationController
         break
       end
     end
-    render json: items.to_json
+    render json: items
   end
 
   def lite_subs
