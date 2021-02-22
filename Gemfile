@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 gem 'rails', '4.2.10'
 
+ruby '2.6.6'
+
 # Include database gems for the adapters found in the database
 # configuration file or DATABASE_URL
 require 'erb'
