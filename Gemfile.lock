@@ -1,17 +1,17 @@
 GIT
-  remote: git://github.com/kyanny/opml.git
+  remote: https://github.com/kyanny/opml.git
   revision: 9f6eb1367b22e5f038de86f115fda434a773a3f2
   specs:
     opml (1.0.0)
       activesupport (~> 3.2.12)
 
 GIT
-  remote: git://github.com/sikachu/verification.git
-  revision: 7c692e3cdb7e3c9dd075503baeb63a1022025f08
+  remote: https://github.com/sikachu/verification.git
+  revision: ff31697b940d7b0e2ec65f08764215c96104e76d
   specs:
     verification (1.0.3)
-      actionpack (>= 3.0.0, < 3.3.0)
-      activesupport (>= 3.0.0, < 3.3.0)
+      actionpack (>= 3.0.0, < 5.1)
+      activesupport (>= 3.0.0, < 5.1)
 
 GEM
   remote: https://rubygems.org/
@@ -96,9 +96,12 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.1)
     mime-types (1.21)
+    mini_portile2 (2.8.5)
     multi_json (1.6.1)
     mysql2 (0.3.11)
-    nokogiri (1.5.6)
+    nokogiri (1.16.0)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
     polyglot (0.3.3)
     pry (0.9.12)
       coderay (~> 1.0.5)
@@ -109,6 +112,7 @@ GEM
       yard (~> 0.8.1)
     pry-rails (0.2.2)
       pry (>= 0.9.10)
+    racc (1.7.3)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
