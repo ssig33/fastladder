@@ -9,7 +9,7 @@ class ConfigTest < ApplicationSystemTestCase
     fill_in "username", with: "dankogai"
     fill_in "password", with: "kogaidan"
     click_on "Sign In"
-    assert_equal "/reader/", current_path
+    assert_current_path "/reader/"
     assert_text "Loading completed.", wait: 10
   end
 
@@ -33,6 +33,12 @@ class ConfigTest < ApplicationSystemTestCase
 
     assert_equal "24", find("#save_current_font").value
 
-    assert_equal "24", @dankogai.reload.config_dump["current_font"]
+    dump = nil
+    10.times do
+      dump = @dankogai.reload.config_dump
+      break if dump["current_font"] == "24"
+      sleep 0.3
+    end
+    assert_equal "24", dump["current_font"]
   end
 end

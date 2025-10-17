@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'rails', '8.1.0.beta1'
+gem 'rails', '8.1.0.rc1'
 
 require 'erb'
 require 'uri'
@@ -37,7 +37,7 @@ gem "nkf", "~> 0.2.0"
 
 gem "http", "~> 5.3"
 
-gem "propshaft", "~> 1.2.1"
+gem "propshaft", "~> 1.3.1"
 
 gem "ostruct", "~> 0.6.3"
 
