@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'rails', '8.1.0.rc1'
+gem 'rails', '8.1.1'
 
 require 'erb'
 require 'uri'
@@ -41,6 +41,6 @@ gem "propshaft", "~> 1.3.1"
 
 gem "ostruct", "~> 0.6.3"
 
-gem "stringio", "3.1.7"
+gem "stringio", "3.1.8"
 
 
