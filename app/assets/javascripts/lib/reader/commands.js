@@ -135,10 +135,12 @@ function get_active_item(detail){
         offsets.push(rect.top - bodyRect.top);
     }
 
-    // 画面の表示範囲（container 内の相対位置）
+    // Visible range in body coordinates
+    // body.offsetTop accounts for any gap between container top and body top
     var scrollTop = container.scrollTop;
     var screenHeight = containerRect.height;
-    var screen = [scrollTop, scrollTop + screenHeight];
+    var bodyOffset = body.offsetTop;
+    var screen = [scrollTop - bodyOffset, scrollTop - bodyOffset + screenHeight];
 
     var pairs = offsets.map(function(v,i,self){
         if(self[i+1]){
