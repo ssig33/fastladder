@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'rails', '8.1.2'
+gem 'rails', '8.1.3'
 
 require 'erb'
 require 'uri'
@@ -29,7 +29,7 @@ end
 
 gem "rails-controller-testing", "~> 1.0"
 
-gem "puma", "~> 7.2"
+gem "puma", "~> 8.0"
 
 gem "settings_cabinet", "~> 1.1.0"
 
@@ -37,7 +37,7 @@ gem "nkf", "~> 0.2.0"
 
 gem "http", "~> 5.3"
 
-gem "propshaft", "~> 1.3.1"
+gem "propshaft", "~> 1.3.2"
 
 gem "ostruct", "~> 0.6.3"
 
