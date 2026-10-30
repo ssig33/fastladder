@@ -11,6 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: mfinelli/setup-imagemagick@v8
+        with:
+          cache: false
+      - run: magick -version
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
